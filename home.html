@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#" id="login-link">Login</a></li>
+                <li><a href="#" id="register-link">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="login-form-container">
+        <form id="login-form">
+            <h2>Login</h2>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="register-form-container">
+        <form id="register-form">
+            <h2>Register</h2>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const loginFormContainer = document.getElementById("login-form-container");
+        const registerFormContainer = document.getElementById("register-form-container");
+        const loginLink = document.getElementById("login-link");
+        const registerLink = document.getElementById("register-link");
+
+        loginLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            loginFormContainer.style.display = "block";
+            registerFormContainer.style.display = "none";
+        });
+
+        registerLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            loginFormContainer.style.display = "none";
+            registerFormContainer.style.display = "block";
+        });
+
+        const registerBtn = document.querySelector('#register-form button');
+
+        registerBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            const name = document.querySelector('#register-form input[type="text"]').value;
+            const email = document.querySelector('#register-form input[type="email"]').value;
+            const password = document.querySelector('#register-form input[type="password"]').value;
+            
+            // Your code to register the user goes here
+        });
+    </script>
+</body>
+</html>
